@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+
+  .bgradus{
+background: rgb(255,255,255);
+background: linear-gradient(185deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.9417016806722689) 56%);
+  }
+}
+.container {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1300px;
+}
+.li:hover .next{
+    transform: translateX(0);
+    opacity: 1;
+}
+.bg1{
+  background-color: rgba(107, 114, 128, 0.75);
+}
+.clos{
+  background-color: rgba(239, 68, 68, 1);
+}
+@media (max-width: 1200px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 95%;
+
+  }
+}
+
