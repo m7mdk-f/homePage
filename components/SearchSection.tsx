@@ -32,7 +32,7 @@ const SearchSection = () => {
 
     return (
         <div className="bg-[#f3f7ff] mt-10" style={{ backgroundImage: 'url("/Images/mainbg.png")' }}>
-            <section className="flex flex-col-reverse container items-center justify-center ltr:gap-4   md:flex-row-reverse py-28 px-6  md:justify-between">
+            <section className="flex flex-col-reverse container items-center justify-center ltr:gap-4   md:flex-row-reverse md:py-28 px-6 py-10  md:justify-between">
                 <div className="bg-white p-6 rounded-[10px] shadow-md ltr:w-full rtl:w-full max-w-sm">
                     <h2 className="text-xl font-bold text-black/60  mb-6">{t("searchForDoctor.search")}</h2>
                     <div className="space-y-4">
