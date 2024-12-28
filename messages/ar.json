@@ -1,0 +1,123 @@
+{
+    "NavBar": {
+        "home": "الرئيسية",
+        "offers": "العروض",
+        "doctors": "أطبائنا",
+        "aboutUs": "من نحن",
+        "bookNow": "احجز الأن",
+        "contactUs": "اتصل بنا"
+    },
+    "Department": {
+        "sections": "أقسامنا",
+        "ophthalmology": "قسم العيون",
+        "dermatology": "قسم الجلدية",
+        "psychiatry": "الطب النفسي",
+        "ent": "قسم الأنف والأذن",
+        "internalMedicine": "قسم الباطنة",
+        "childrenDepartment": "قسم الأطفال",
+        "gynecology": "قسم النساء والولادة"
+    },
+    "MegaMenu": {
+        "sections": "أقسامنا",
+        "megaMenuLink": "رابط الميجا منيو",
+        "bookNow": "احجز الآن"
+    },
+    "locale": "ar",
+    "aboutUs": {
+        "title": "تعرف علينا",
+        "clinicName": "عيادات د. موسى ماهر الطبية",
+        "introText": "تمكنك سهولة بسيطة من البيع للعملاء الأفراد أو الشركات، من خلال نموذج مخصص تتم الموافقة عليه من قبل مدير المتجر.",
+        "features": {
+            "clinicFeatures": "مميزات العيادة",
+            "workingHours": "أوقات العمل",
+            "team": "فريق العمل"
+        }
+    },
+    "searchForDoctor": {
+        "titleInfo": "عيادات د. موسى ماهر لزراعة وتجميل الأسنان",
+        "description": "نعتني بكم في كل وقت وزمان. تمتع اليوم بتجربة حجز سهلة وسريعة لراحتكم.",
+        "learnMoreButton": "اكتشف المزيد",
+        "search": "ابحث عن طبيب"
+    },
+    "selectDepartment": "اختر القسم",
+    "selectTime": "اختر الموعد",
+    "searchButton": "بحث",
+    "selectBranch": "اختر خيارًا",
+    "selectBranchFirst": "اختر الفرع أولاً",
+    "selectDepartmentFirst": "اختر القسم أولاً",
+    "departments": {
+        "header": "أبرز الأقسام",
+        "dermatology": "قسم الجلدية",
+        "ophthalmology": "قسم العيون",
+        "internalMedicine": "قسم الباطنة",
+        "psychiatry": "الطب النفسي"
+    },
+    "home": {
+        "latestOffers": "أحدث العروض",
+        "ourDoctors": "أطبائنا",
+        "doctorsDescription": "نتميز بالعديد من العيادات و الاطباء ذوو الكفاءة العالية لخدمتكم بشكل يرضيكم",
+        "labOffers": {
+            "title": "عروض المختبرات الطبية..!",
+            "description": "تمتع بالعديد من العروض المختلفة من مختبراتنا للتأكد من صحتك اليوم..",
+            "button": "تصفح العروض"
+        },
+        "articlesAndNews": "المقالات والاخبار",
+        "viewAll": "عروض الكل"
+    },
+    "BookNow": " احجز الآن",
+    "servece": {
+        "header": "خدماتنا",
+        "description": "نتميز بالعديد من العيادات و الاطباء ذوو الكفاءة العالية لخدمتكم بشكل يرضيكم"
+    },
+    "stats": {
+        "titleVisits": "عدد الزيارات",
+        "titleDoctors": "عدد الأطباء",
+        "titleStaff": "عدد طاقم العمل",
+        "lastUpdated": "آخر تحديث",
+        "dates": {
+            "date1": "الثلاثاء 30 نوفمبر 2024",
+            "date2": "آخر تحديث شثسبشسيب"
+        }
+    },
+    "insurancePartners": {
+        "header": "شركائنا في التأمين",
+        "description": "نتميز بالعديد من العيادات و الاطباء ذوو الكفاءة العالية لخدمتكم بشكل يرضيكم"
+    },
+    "findMore": {
+        "title": "شهادات الاعتماد والخبرات",
+        "description": "نفخر بحصولنا على أبرز الشهادات والخبرات الطبية المتميزة",
+        "buttonText": "اكتشف المزيد"
+    },
+    "workingHours": {
+        "header": "ساعات العمل",
+        "saturdayToWednesday": "السبت - الأربعاء",
+        "workingHours": "٩ ص - ١٠ م",
+        "thursday": "الخميس",
+        "friday": "الجمعة",
+        "closed": "مغلق",
+        "followUs": "تابعنا على"
+    },
+    "searchPlaceholder": "ابحث عن قسم ، موعد ..",
+    "languageArabic": "العربية",
+    "imageLan": "/Images/lang1.webp",
+    "mainBranch": "الفرع الرئيسي",
+    "langage": {
+        "title": "اللغة",
+        "done": "موافق"
+    },
+    "learnmore": "اقرأ المزيد ",
+    "showViedo": {
+        "title": "عيادات د. موسى ماهر الطبية لزراعة وتجميل الأسنان",
+        "description": "تمتع بالعديد من العروض المختلفة من مختبراتنا للتأكد من صحتك اليوم.."
+    },
+    "Footer": {
+        "storeDescription": "متجر تجريبي - Demo Store",
+        "importantLinks": "روابط مهمة",
+        "blog": "المدونة",
+        "aboutUs": "من نحن",
+        "contactUs": "اتصل بنا",
+        "bookNow": "احجز الآن",
+        "contactUsTitle": "تواصل معنا",
+        "phone": "8001111210"
+    }
+}

@@ -6,9 +6,11 @@ import Image from 'next/image';
 import { GoTriangleLeft } from 'react-icons/go';
 import Link from 'next/link';
 import { CiHeart } from 'react-icons/ci';
+import { useTranslations } from 'next-intl';
 
 
 function CardDoctor({ doctors }: { doctors: Doctor }) {
+    const t = useTranslations();
     return (
         <div>
             <div
@@ -24,10 +26,10 @@ function CardDoctor({ doctors }: { doctors: Doctor }) {
                             className=" object-cover "
                         />
                         {doctors.badge && (
-                            <div className='absolute top-2 right-2 '>
-                                <span className={`${doctors.badge.includes('خصم') ? "bg-danger" : "bg-primary"} relative  text-white text-xs font-bold px-2 py-1 rounded`}>
+                            <div className='absolute top-2 rtl:right-2 ltr:left-2 '>
+                                <span className={`${doctors.badge.includes('خصم') || doctors.badge.includes('Discount') ? "bg-danger" : "bg-primary"} relative  text-white text-xs font-bold px-2 py-1 rounded`}>
                                     {doctors.badge}
-                                    <div className={`${doctors.badge.includes('خصم') ? "text-danger" : "text-primary"} absolute  top-0 -left-4 `}>
+                                    <div className={`${doctors.badge.includes('خصم') || doctors.badge.includes('Discount') ? "text-danger" : "text-primary"} absolute  top-0 rtl:-left-4 ltr:-right-4 ltr:rotate-180 `}>
                                         <GoTriangleLeft className='w-6 h-6' />
                                     </div>
                                 </span>
@@ -36,7 +38,7 @@ function CardDoctor({ doctors }: { doctors: Doctor }) {
                     </div>
                 </Link>
                 <div className="p-4 relative">
-                    <Button size='icon' variant='secondary' className='absolute  -top-7 bg-white left-5'>
+                    <Button size='icon' variant='secondary' className='absolute  -top-7 bg-white rtl:left-5 ltr:right-5'>
                         <CiHeart className='scale-150' />
                     </Button>
                     <Link href='/' className="text-xl line-clamp-1 font-semibold hover:text-primary duration-300   text-gray-800">
@@ -52,7 +54,7 @@ function CardDoctor({ doctors }: { doctors: Doctor }) {
                     </p>
                     <Button variant='outline' className='w-full  font-bold'>
                         <FaRegCalendar size={20} />
-                        احجز الآن
+                        {t("BookNow")}
                     </Button>
                 </div>
             </div>

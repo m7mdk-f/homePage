@@ -8,17 +8,8 @@ import DesctopNav from './DesctopNav';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import Header from './Header';
 
-const menuItems = [
-  "قسم العيون",
-  "قسم الجلدية",
-  "الطب النفسي",
-  "قسم الأنف والأذن",
-  "قسم الباطنة",
-];
-
 function NavBar() {
   const [active, setActive] = useState(false)
-
   useEffect(() => {
     active ? document.body.classList.add("overflow-hidden") : document.body.classList.remove("overflow-hidden")
   }, [active])
@@ -29,7 +20,7 @@ function NavBar() {
         <div className='container  flex  justify-between'>
           <div className='text-white md:hidden text-2xl flex sm:gap-3 '>
             <IoMenuSharp className='cursor-pointer sm:w-9 sm:h-9 ' onClick={() => { setActive(true) }} />
-            <div className='relative h-full sm:w-40  w-28 scale-125 mr-5 '>
+            <div className='relative h-full sm:w-40  w-28 scale-125 rtl:mr-5 ltr:ml-5 '>
               <Image fill alt='' src='/Images/logo.webp' className='object-contain  '></Image>
             </div>
           </div>

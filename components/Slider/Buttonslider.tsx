@@ -30,7 +30,10 @@ function Buttonslider({ insideDiv, headerDivBut, childrenposion = "center", swip
                         }}
                         className={`${classButton || "rounded-md w-8 h-8 bg-gray-300 "} text-center flex  justify-center items-center ${isBeginning && !goback ? 'opacity-50  cursor-not-allowed hover:opacity-50' : `${hoverBut || 'hover:text-primary  pointer-events-auto cursor-pointer '} `}`}
                     >
-                        {iconpre && React.cloneElement(iconpre, { className: ` ${iconClass || 'w-5 h-5'}` }) || <MdOutlineNavigateNext className={` ${iconClass || 'w-5 h-5'}`} />}
+                        {iconpre && React.cloneElement(iconpre, { className: ` ${iconClass || 'w-5 h-5'}` }) || <>
+                            <MdOutlineNavigateNext className={` ${iconClass || 'w-5 h-5'} ltr:hidden`} />
+                            <GrFormPrevious className={` ${iconClass || 'w-5 h-5'} rtl:hidden`} />
+                        </>}
                     </Button>
                     {childrenposion?.trim().toLocaleLowerCase() === 'center' ? children : ""}
                     <Button
@@ -39,7 +42,11 @@ function Buttonslider({ insideDiv, headerDivBut, childrenposion = "center", swip
                         }}
                         className={`${classButton || "rounded - md w-8 h-8 bg-gray-300 "} text-center flex   justify-center items-center ${isEnd && !goback ? 'opacity-50  cursor-not-allowed hover:opacity-50' : `${hoverBut || 'hover:text-primary  pointer-events-auto cursor-pointer'} `}`}
                     >
-                        {iconnext && React.cloneElement(iconnext, { className: ` ${iconClass || 'w-5 h-5'}` }) || <GrFormPrevious className={` ${iconClass || 'w-5 h-5'}`} />}
+                        {iconnext && React.cloneElement(iconnext, { className: ` ${iconClass || 'w-5 h-5'}` }) || <>
+                            <GrFormPrevious className={` ${iconClass || 'w-5 h-5'} ltr:hidden`} />
+                            <MdOutlineNavigateNext className={` ${iconClass || 'w-5 h-5'} rtl::hidden`} />
+
+                        </>}
                     </Button>
                 </div >
             </div>

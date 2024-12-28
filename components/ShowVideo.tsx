@@ -3,18 +3,20 @@ import React, { useState } from 'react'
 import PodcastCard from './PodcastCard'
 import { BsFillPlayFill } from 'react-icons/bs'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 function ShowVideo() {
     const [video, setVideo] = useState(false)
+    const t = useTranslations("showViedo")
     return (
         <div>
             <PodcastCard video={video} setVideo={setVideo} />
             <div className="container py-20 bg-primary bg-opacity-[.05] " >
                 <div className="lg:w-[90%] w-[90%] mx-auto lg:flex-row  flex-col-reverse flex gap-20">
                     <div className="w-full  flex  items-center">
-                        <div className="flex flex-col  gap-6 ">
-                            <h1 className="lg:text-4xl  font-bold sm:text-3xl text-2xl lg:leading-relaxed   text-black ">عيادات د. موسى ماهر الطبية لزراعة وتجميل الأسنان</h1>
-                            <p className="text-black/70 line-clamp-2 lg:w-[75%] md:text-xl text-sm sm:text-lg ">تمتع بالعديد من العروض المختلفة من مختبراتنا للتأكد من صحتك اليوم..</p>
+                        <div className="flex flex-col  rtl:gap-6 gap-3 ">
+                            <h1 className="rtl:lg:text-4xl   font-bold sm:text-3xl text-2xl lg:leading-relaxed   text-black ">{t("title")}</h1>
+                            <p className="text-black/70 line-clamp-2 lg:w-[75%] rtl:md:text-xl  ltr:sm:text-base text-sm rtl:sm:text-lg ">{t("description")}</p>
                         </div>
                     </div>
                     <div className="relative w-full md:h-96 h-72">

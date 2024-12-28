@@ -1,5 +1,6 @@
 import React from "react";
 import { MdStorefront } from "react-icons/md";
+import { useTranslations } from "next-intl";
 
 interface StatCardProps {
     title: string;
@@ -9,24 +10,26 @@ interface StatCardProps {
 
 const StatCard: React.FC<StatCardProps> = ({ title, value, lastUpdated }) => {
     return (
-        <div className=" p-6 py-10 bg-white overflow-hidden  rounded-xl shadow-md text-center">
+        <div className="p-6 py-10 bg-white overflow-hidden rounded-xl shadow-md text-center">
             <div className="flex justify-center items-center mb-4">
-                <div className="bg-blue-100 p-5  rounded-full">
+                <div className="bg-blue-100 p-5 rounded-full">
                     <MdStorefront className="text-2xl text-primary z-1" />
                 </div>
             </div>
             <h3 className="text-lg font-semibold text-gray-700 mb-2">{title}</h3>
             <p className="text-2xl font-bold text-gray-900">{value}</p>
-            <p className="text-sm text-gray-500 mt-2">آخر تحديث: {lastUpdated}</p>
+            <p className="text-sm text-gray-500 mt-2">{lastUpdated}</p>
         </div>
     );
 };
 
 const StatsCards: React.FC = () => {
+    const t = useTranslations("stats");
+
     const stats = [
-        { title: "عدد الزيارات", value: 40000, lastUpdated: "آخر تحديث شثسبشسيب" },
-        { title: "عدد الأطباء", value: 34, lastUpdated: "الثلاثاء 30 نوفمبر 2024" },
-        { title: "عدد طاقم العمل", value: 234, lastUpdated: "الثلاثاء 30 نوفمبر 2024" },
+        { title: t("titleVisits"), value: 40000, lastUpdated: `${t("lastUpdated")}: ${t("dates.date2")}` },
+        { title: t("titleDoctors"), value: 34, lastUpdated: `${t("lastUpdated")}: ${t("dates.date1")}` },
+        { title: t("titleStaff"), value: 234, lastUpdated: `${t("lastUpdated")}: ${t("dates.date1")}` },
     ];
 
     return (

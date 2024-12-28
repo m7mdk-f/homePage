@@ -1,10 +1,13 @@
-// components/InsurancePartners.tsx
 import React from "react";
 import Slider from "./Slider/Slider";
 import Image from "next/image";
 import HeaderDiv from "./HeaderDiv";
+import { useTranslations } from "next-intl";
+import Details from "./Details";
 
 const InsurancePartners = () => {
+
+    const t = useTranslations("insurancePartners");
     const companies = [
         { name: "الصقر للتأمين", logo: "/Images/slider1.webp" },
         { name: "التعاونية", logo: "/Images/slider2.webp" },
@@ -19,11 +22,11 @@ const InsurancePartners = () => {
 
     return (
         <div className="bg-white py-16  container">
-            <HeaderDiv text="شركائنا في التأمين" />
-            <p className="text-gray-400">نتميز بالعديد من العيادات و الاطباء ذوو الكفاءة العالية لخدمتكم بشكل يرضيكم</p>
+            <HeaderDiv text={t("header")} />
+            <Details text={t("description")} />
             <div className=" text-center pt-7">
                 <div className="flex justify-center items-center space-x-2 rtl:space-x-reverse">
-                    <Slider classButton="rounded-full p-2 border " enableAutonPlay iconClass="w-6 h-6" spaceBetween={20} number={6} headerDivBut="absolute sm:block hidden -top-16 pointer-events-none left-0">
+                    <Slider classButton="rounded-full p-2 border " enableAutonPlay iconClass="w-6 h-6" spaceBetween={20} number={6} headerDivBut="absolute sm:block hidden -top-16 pointer-events-none rtl:left-0 ltr:right-0">
                         {companies.map((company, index) => (
                             <div
                                 key={index}

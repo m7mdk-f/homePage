@@ -4,8 +4,10 @@ import React from 'react'
 import { FaRegCalendar } from 'react-icons/fa'
 import { Button } from './ui/button'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 function DoctursUs({ doctors }: { doctors: Doctor }) {
+  const t = useTranslations()
   return (
     <Link href="/">
       <div className='relative group lg:h-[435px] h-96  rounded-xl overflow-hidden'>
@@ -20,7 +22,7 @@ function DoctursUs({ doctors }: { doctors: Doctor }) {
 
             <Button variant='default' className='w-full mb-5  overflow-hidden  border border-primary hover:bg-dark font-bold'>
               <FaRegCalendar size={20} />
-              احجز الآن
+              {t("BookNow")}
             </Button>
           </div>
         </div>

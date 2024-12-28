@@ -1,35 +1,36 @@
-// components/WorkingHours.tsx
 import React from "react";
 import HeaderDiv from "./HeaderDiv";
+import { useTranslations } from 'next-intl';  // Hook for translations
 
 const WorkingHours = () => {
+    const t = useTranslations('workingHours');  // Fetch localized text for the 'workingHours' section
+
     return (
-        <div className="my-10 ">
-            <div className="relative container  text-gray-800">
-                <div className=" absolute md:top-0 w-full pointer-events-none bottom-3 md:right-10  md:max-w-96  rounded-xl  ">
+        <div className="my-10">
+            <div className="relative container text-gray-800">
+                <div className="absolute md:top-0 w-full pointer-events-none bottom-3 md:right-10 md:max-w-96 rounded-xl">
                     <div className="bg-white pointer-events-auto w-[90%] mx-auto md:w-full shadow-lg">
-                        <div className=" flex flex-col gap-2 mt-10 mx-auto w-[90%] pt-5">
-                            <div><HeaderDiv className="" text="ساعات العمل" /></div>
-                            <ul className="md:text-lg text-base text-black/50   ">
+                        <div className="flex flex-col gap-2 mt-10 mx-auto w-[90%] pt-5">
+                            <div><HeaderDiv className="" text={t('header')} /></div>
+                            <ul className="rtl:md:text-lg text-base text-black/50">
                                 <li className="flex gap-1 items-center py-1">
-                                    <span> السبت - الأربعاء</span>
+                                    <span>{t('saturdayToWednesday')}</span>
                                     <span> ... </span>
-                                    <span>٩ ص - ١٠ م</span>
+                                    <span>{t('workingHours')}</span>
                                 </li>
                                 <li className="flex gap-1 items-center py-1">
-                                    <span>الخميس</span>
+                                    <span>{t('thursday')}</span>
                                     <span>...</span>
-
-                                    <span>٩ ص - ١٠ م</span>
+                                    <span>{t('workingHours')}</span>
                                 </li>
                                 <li className="flex justify-between items-center py-1">
-                                    <span>الجمعة</span>
-                                    <span className="text-red-500 font-semibold">مغلق</span>
+                                    <span>{t('friday')}</span>
+                                    <span className="text-red-500 font-semibold">{t('closed')}</span>
                                 </li>
                             </ul>
                             <hr className="mt-4" />
-                            <div className=" my-4 mb-8 text-black font-semibold ">
-                                <h1>تابعنا على</h1>
+                            <div className="my-4 mb-8 text-black font-semibold">
+                                <h1>{t('followUs')}</h1>
                             </div>
                         </div>
                     </div>

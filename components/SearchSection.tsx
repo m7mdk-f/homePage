@@ -3,74 +3,91 @@ import { useState } from "react";
 import Selected from "./Selected";
 import { Button } from "./ui/button";
 import ButtonHover from "./ButtonHover";
+import { useTranslations } from "next-intl";
 
 const SearchSection = () => {
     const [branch, setBranch] = useState<string | null>(null);
     const [department, setDepartment] = useState<string | null>(null);
 
+    const t = useTranslations()
     const branchOptions = [
-        { value: "branch1", label: "الفرع الرئيسي" },
-        { value: "branch2", label: "فرع مكة" },
-        { value: "branch3", label: "فرع المدينة المنورة" },
+        { value: "branch1", label: { ar: "الفرع الرئيسي", en: "Main Branch" } },
+        { value: "branch2", label: { ar: "فرع مكة", en: "Makkah Branch" } },
+        { value: "branch3", label: { ar: "فرع المدينة المنورة", en: "Madinah Branch" } },
     ];
 
     const departmentOptions = [
-        { value: "department1", label: "قسم الأطفال" },
-        { value: "department2", label: "قسم حديثي الولادة" },
-        { value: "department3", label: "قسم الأنف والأذن" },
-        { value: "department4", label: "قسم النساء والولادة" },
+        { value: "department1", label: { ar: "قسم الأطفال", en: "Pediatrics" } },
+        { value: "department2", label: { ar: "قسم حديثي الولادة", en: "Neonatal" } },
+        { value: "department3", label: { ar: "قسم الأنف والأذن", en: "ENT" } },
+        { value: "department4", label: { ar: "قسم النساء والولادة", en: "Gynecology & Obstetrics" } },
     ];
 
     const timeOptions = [
-        { value: "time1", label: "موعد 1" },
-        { value: "time2", label: "موعد 2" },
+        { value: "time1", label: { ar: "موعد 1", en: "Appointment 1" } },
+        { value: "time2", label: { ar: "موعد 2", en: "Appointment 2" } },
     ];
+    const locale = t("locale");
+    const getLabel = (option: { label: { ar: string; en: string } }) => option.label[locale as "ar" | "en"];
 
     return (
         <div className="bg-[#f3f7ff] mt-10" style={{ backgroundImage: 'url("/Images/mainbg.png")' }}>
-            <section className="flex flex-col-reverse container items-center justify-center   md:flex-row-reverse py-28 px-6  md:justify-between">
-                <div className="bg-white p-6 rounded-[10px] shadow-md w-full max-w-sm">
-                    <h2 className="text-xl font-bold text-black/60  mb-6">ابحث عن طبيب</h2>
+            <section className="flex flex-col-reverse container items-center justify-center ltr:gap-4   md:flex-row-reverse py-28 px-6  md:justify-between">
+                <div className="bg-white p-6 rounded-[10px] shadow-md ltr:w-full rtl:w-full max-w-sm">
+                    <h2 className="text-xl font-bold text-black/60  mb-6">{t("searchForDoctor.search")}</h2>
                     <div className="space-y-4">
                         <Selected
-                            label="اختر الفرع"
-                            options={branchOptions}
+                            label={t("selectBranch")}
+                            options={branchOptions.map((option) => ({
+                                value: option.value,
+                                label: getLabel(option),
+                            }))}
                             value={branch}
                             onChange={(value) => {
                                 setBranch(value);
                                 setDepartment(null);
                             }}
+                            placeholder={t("selectBranch")}
                         />
                         <Selected
-                            label="اختر القسم"
-                            options={departmentOptions}
+                            label={t("selectDepartment")}
+                            options={departmentOptions.map((option) => ({
+                                value: option.value,
+                                label: getLabel(option),
+                            }))}
                             value={department}
                             onChange={setDepartment}
                             disabled={!branch}
-                            placeholder="اختر الفرع أولاً"
+                            placeholder={t("selectBranchFirst")}
                         />
                         <Selected
-                            label="اختر الموعد"
-                            options={timeOptions}
+                            label={t("selectTime")}
+                            options={timeOptions.map((option) => ({
+                                value: option.value,
+                                label: getLabel(option),
+                            }))}
                             value={null}
                             onChange={() => { }}
                             disabled={!department}
-                            placeholder="اختر القسم أولاً"
+                            placeholder={t("selectDepartmentFirst")}
                         />
                         <button className="w-full py-2 px-4 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600">
-                            بحث
+                            {t("searchButton")}
                         </button>
                     </div>
                 </div>
 
                 {/* Right side - Info */}
-                <div className="mt-8 md:mt-0 md:ml-12 lg:w-[45%] md:h-1/2 sm:w-[60%]  w-full text-center md:text-right">
-                    <h1 className="lg:text-[40px] md:text-3xl sm:text-2xl text-xl  font-semibold lg:leading-normal">عيادات د. موسى ماهر الطبية لزراعة وتجميل الأسنان</h1>
-                    <p className="text-gray-600 text-lg  mt-4 lg:max-w-md">
-                        نعتني بكم في كل وقت وزمان. تمتع اليوم بتجربة حجز سهلة وسريعة لراحتكم.
+                <div className="mt-8 md:mt-0 rtl:md:ml-12 rtl:lg:w-[45%] ltr:lg:w-[50%] md:h-1/2 ltr:sm:w-full  rtl:sm:w-[60%] w-full text-center ltr:md:text-left rtl:md:text-right">
+                    <h1 className="rtl:lg:text-[40px] rtl:md:text-3xl ltr:text-xl sm:text-2xl text-xl font-semibold lg:leading-normal">
+                        {t("searchForDoctor.titleInfo")}
+                    </h1>
+                    <p className="text-gray-600 text-lg mt-4 lg:max-w-md">
+                        {t("searchForDoctor.description")}
                     </p>
-                    <ButtonHover text="اكتشف المزيد" style="default" className="py-4 px-6 my-6 " />
+                    <ButtonHover text={t("searchForDoctor.learnMoreButton")} style="default" className="py-4 px-6 my-6" />
                 </div>
+
             </section>
         </div>
 

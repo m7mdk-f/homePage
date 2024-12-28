@@ -21,7 +21,7 @@ const Selected: React.FC<SelectProps> = ({
 }) => {
     return (
         <div className={`mb-4 ${className}`}>
-            <label className="block mb-2 text-gray-700 font-medium">{label}</label>
+            <label className="block mb-2 text-gray-700  font-medium">{label}</label>
             <div className={`border rounded-[7px] py-1 ${disabled ? "opacity-70 cursor-not-allowed" : ""}`}>
                 <select
                     value={value || ""}

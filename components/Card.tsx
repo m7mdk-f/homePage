@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -12,13 +13,14 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ image, date, title, description, link }) => {
+    const t = useTranslations()
     return (
         <div className="bg-white border  rounded-xl  overflow-hidden flex flex-col">
             <div className="h-[350px] w-full cursor-pointer overflow-hidden relative">
                 <Image
                     src={image}
                     alt={title}
-                    fill    
+                    fill
                     className=" hover:scale-110 duration-300 object-cover "
                 />
             </div>
@@ -31,9 +33,10 @@ const Card: React.FC<CardProps> = ({ image, date, title, description, link }) =>
                 <hr className="w-[95%] mx-auto mb-6 mt-3" />
                 <Link
                     href={link}
-                    className="text-primary font-medium mt-auto  flex group items-center"
+                    className="text-primary  font-medium mt-auto  flex group items-center"
                 >
-                    اقرأ المزيد <GrFormPrevious className="text-base -translate-x-1 duration-100 group-hover:-translate-x-2 " />
+                    {t("learnmore")}
+                    <GrFormPrevious className="text-base rtl:-translate-x-1 mt-0.5 duration-100 rtl:group-hover:-translate-x-2 ltr:rotate-180 ltr:group-hover:translate-x-2 " />
 
                 </Link>
             </div>
