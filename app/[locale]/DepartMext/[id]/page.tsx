@@ -72,7 +72,7 @@ function page() {
                         </AnimationDiv>}
                 </AnimatePresence>
                 <div className='container py-10 '>
-                    <div className='flex justify-between mb-10'>
+                    <div className='flex md:flex-wrap items-center  flex-col md:gap-0 gap-3  justify-between mb-10'>
                         <h1 className='text-lg font-semibold'>{filteredDoctors[0] ? (
                             id == 'internalMedicine' ? t('Department.internalMedicine') : filteredDoctors[0].department
                         ) : id}</h1>

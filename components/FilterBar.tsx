@@ -10,7 +10,7 @@ const FilterBar = ({ setactive }: { setactive: React.Dispatch<SetStateAction<boo
     const t = useTranslations('seleteoption');
 
     return (
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap">
             {/* Sort Dropdown */}
             <div className="flex gap-2 items-center text-sm">
                 <label

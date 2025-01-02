@@ -204,5 +204,10 @@
         "cart": "Shopping Cart",
         "empty_cart": "Your cart is empty",
         "return_home": "Return to Home"
+    },
+    "blogpage": "Blog",
+    "FillterPageBlog": {
+        "public": "public",
+        "Categories": "Categories"
     }
 }

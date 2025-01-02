@@ -204,5 +204,10 @@
         "cart": "سلة المشتريات",
         "empty_cart": "السلة فارغة",
         "return_home": "عودة للرئيسية"
+    },
+    "blogpage":"المدونة",
+    "FillterPageBlog":{
+        "public":"عام",
+        "Categories":"التصنيفات"
     }
 }

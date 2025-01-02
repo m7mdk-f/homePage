@@ -9,9 +9,7 @@ function ClickDiv({ className, active, setActive, children }: { children: ReactN
     return (
         <div
             onClick={() => {
-                console.log(1)
                 setActive && setActive(false)
-                console.log(active)
             }}
             className={`${className || ""
                 } md:flex fixed   top-0 right-0   bg1 w-full h-screen z-[70] md:text-white text-black/80`}
