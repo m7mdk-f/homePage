@@ -18,8 +18,8 @@
         "gynecology": "Gynecology"
     },
     "MegaMenu": {
-        "sections": "Sections",
-        "megaMenuLink": "Mega Menu Link",
+        "sections": "Mega Menu",
+        "megaMenuLink": "Mega sub menu",
         "bookNow": "Book Now"
     },
     "locale": "en",
@@ -50,7 +50,8 @@
         "dermatology": "Dermatology",
         "ophthalmology": "Ophthalmology",
         "internalMedicine": "Internal Medicine",
-        "psychiatry": "Psychiatry"
+        "psychiatry": "Psychiatry",
+        "showall": "Show all"
     },
     "home": {
         "latestOffers": "Latest Offers",
@@ -119,5 +120,89 @@
         "bookNow": "Book Now",
         "contactUsTitle": "Contact Us",
         "phone": "8001111210"
+    },
+    "offers": {
+        "titlePage": "Discounts",
+        "title": "Center Discounts",
+        "description": "We are proud to offer the best clinics and medical staff to take care of you around the clock for better health.",
+        "header": "Discounts - One Product"
+    },
+    "DoctorsPage": {
+        "titlePage": "Latest Products",
+        "title": "Our Doctors Care for You",
+        "description": "We take pride in offering the best clinics and medical staff to care for you and your loved ones around the clock for better health.",
+        "header": "Latest Products - 8 Products"
+    },
+    "BookedNow": {
+        "title": "Book Now",
+        "header": "Book Now"
+    },
+    "WhoUs": "About Us",
+    "ConcatUs": "Concat Us",
+    "Emtey": "No products found",
+    "Depts": {
+        "heading": "Here we begin life with a new start",
+        "description": "The Obstetrics and Gynecology department is proud of offering the best clinics and medical staff to care for you and your loved ones around the clock for your health."
+    },
+    "Fillter": {
+        "categories": "Product Categories",
+        "women_and_maternity": "Women and Maternity",
+        "price": "Price",
+        "from": "From SAR",
+        "to": "To SAR",
+        "clear_filters": "Clear Filters"
+    },
+    "seleteoption": {
+        "sort_by": "Sort by:",
+        "our_suggestions": "Our Suggestions",
+        "best_selling": "Best Selling",
+        "top_rated": "Top Rated",
+        "price_high_to_low": "Price: High to Low",
+        "price_low_to_high": "Price: Low to High",
+        "filter_and_sort": "Filter & Sort"
+    },
+    "doctor_not_found": "Doctor not found.",
+    "appointment_description_title": "Appointment Description",
+    "appointment_description": "Book an appointment with us and get a free review within a week.",
+    "follow_up_title": "Follow-Up Date",
+    "follow_up_description": "Details about the follow-up appointment.",
+    "important_notes_title": "Important Notes Before Your Appointment",
+    "important_notes_description": "Important reminders for your appointment.",
+    "products_you_might_like": "Products You Might Like",
+    "AppointmentCard": {
+        "doctorImageAlt": "Doctor image {index}",
+        "addToFavorites": "Add to Favorites",
+        "share": "Share",
+        "currency": "SAR",
+        "description": "This is an example description text.",
+        "attachments": "Attachments",
+        "addNote": "Add Note",
+        "attachFile": "Attach File",
+        "addNotePlaceholder": "Add your notes here",
+        "dropFileHere": "Drag and drop your file here",
+        "browse": "Browse",
+        "bookNow": "Book Now"
+    },
+    "Locations": {
+        "chooseBranch": "You are now browsing the store from",
+        "MainBranch": "MainBranch",
+        "MeccaBranch": "MeccaBranch",
+        "MadinahBranch": "MadinahBranch"
+    },
+    "loginpage": {
+        "login": "Login",
+        "email": "Email",
+        "email_placeholder": "Your@email.com",
+        "incorrect_email": "* Please check your email address",
+        "verification_required": "Verification code is required to complete the process",
+        "verification_sent": "The verification code has been sent to your email",
+        "check_code": "Verify",
+        "send_code_after": "You can resend after",
+        "send": "Send"
+    },
+    "shoppinPage": {
+        "cart": "Shopping Cart",
+        "empty_cart": "Your cart is empty",
+        "return_home": "Return to Home"
     }
 }

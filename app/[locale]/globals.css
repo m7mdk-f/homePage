@@ -2,17 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer utilities{
 
   .bgradus{
 background: rgb(255,255,255);
 background: linear-gradient(185deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.9417016806722689) 56%);
   }
+  .bg2{
+    background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5635504201680672) 56%);
+  }
 }
 .container {
   width: 95%;
   margin: 0 auto;
-  max-width: 1300px;
+  max-width: 1250px;
 }
 .li:hover .next{
     transform: translateX(0);
@@ -35,5 +39,31 @@ background: linear-gradient(185deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.9417016
     width: 95%;
 
   }
-}
 
+}
+.swiper-pagination{
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 0;
+  background-color: transparent ;
+  z-index: 10;
+  height: 100px ; 
+  width: 100% ;
+}
+.swiper-pagination span{
+  background-color: rgba(255, 255, 255, 0.337);
+  border: 1px solid rgba(61, 61, 61, 0.471);
+  border-radius: 50%;
+  width: 9px;
+  transition: .5s;
+  height: 9px;
+  cursor: pointer;
+}
+.swiper-pagination-bullet-active{
+  background-color: white !important;
+  width: 40px !important;
+  border-radius: 20px !important;
+}

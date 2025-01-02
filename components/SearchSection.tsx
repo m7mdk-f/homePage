@@ -4,6 +4,7 @@ import Selected from "./Selected";
 import { Button } from "./ui/button";
 import ButtonHover from "./ButtonHover";
 import { useTranslations } from "next-intl";
+import { Link } from "@/navigation";
 
 const SearchSection = () => {
     const [branch, setBranch] = useState<string | null>(null);
@@ -15,7 +16,6 @@ const SearchSection = () => {
         { value: "branch2", label: { ar: "فرع مكة", en: "Makkah Branch" } },
         { value: "branch3", label: { ar: "فرع المدينة المنورة", en: "Madinah Branch" } },
     ];
-
     const departmentOptions = [
         { value: "department1", label: { ar: "قسم الأطفال", en: "Pediatrics" } },
         { value: "department2", label: { ar: "قسم حديثي الولادة", en: "Neonatal" } },
@@ -71,7 +71,9 @@ const SearchSection = () => {
                             disabled={!department}
                             placeholder={t("selectDepartmentFirst")}
                         />
-                        <button className="w-full py-2 px-4 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600">
+                        <button
+                            disabled={!department}
+                            className={`${!department && "opacity-50"} w-full py-2 px-4 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600`}>
                             {t("searchButton")}
                         </button>
                     </div>
@@ -85,7 +87,9 @@ const SearchSection = () => {
                     <p className="text-gray-600 text-lg mt-4 lg:max-w-md">
                         {t("searchForDoctor.description")}
                     </p>
-                    <ButtonHover text={t("searchForDoctor.learnMoreButton")} style="default" className="py-4 px-6 my-6" />
+                    <Link href="/DepartMext/dermatology">
+                        <ButtonHover text={t("searchForDoctor.learnMoreButton")} style="default" className="py-4 px-6 my-6" />
+                    </Link>
                 </div>
 
             </section>

@@ -18,8 +18,8 @@
         "gynecology": "قسم النساء والولادة"
     },
     "MegaMenu": {
-        "sections": "أقسامنا",
-        "megaMenuLink": "رابط الميجا منيو",
+        "sections": "ميجا منيو",
+        "megaMenuLink": "الميجا منيو فرعي",
         "bookNow": "احجز الآن"
     },
     "locale": "ar",
@@ -50,7 +50,8 @@
         "dermatology": "قسم الجلدية",
         "ophthalmology": "قسم العيون",
         "internalMedicine": "قسم الباطنة",
-        "psychiatry": "الطب النفسي"
+        "psychiatry": "الطب النفسي",
+        "showall": "عرض الكل"
     },
     "home": {
         "latestOffers": "أحدث العروض",
@@ -119,5 +120,89 @@
         "bookNow": "احجز الآن",
         "contactUsTitle": "تواصل معنا",
         "phone": "8001111210"
+    },
+    "offers": {
+        "titlePage": "التخفيضات",
+        "title": "تخفيضات المركز",
+        "description": "نفخر بأفضل العيادات و الكوادر الطبية للإهتمام بكم واجبنا على مدار الساعة لصحة أفضل",
+        "header": "التخفيضات - منتج واحد"
+    },
+    "DoctorsPage": {
+        "titlePage": "أحدث المنتجات",
+        "title": "أطباؤنا يهتمون بكم",
+        "description": "نفخر بأفضل العيادات و الكوادر الطبية للإهتمام بكم واحبابكم على مدار الساعة لصحة افضل",
+        "header": "أحدث المنتجات - 8 منتجات"
+    },
+    "BookedNow": {
+        "title": "احجز الآن",
+        "header": "احجز الأن"
+    },
+    "WhoUs": "من نحن",
+    "ConcatUs": "اتصل بنا",
+    "Emtey": "لا توجد منتجات",
+    "Depts": {
+        "heading": "هنا نبدأ الحياة بحياة جديدة",
+        "description": "قسم النساء والتوليد نفخر بأفضل العيادات و الكوادر الطبية للإهتمام بكم واحبابكم على مدار الساعة لصحة"
+    },
+    "Fillter": {
+        "categories": "فئات المنتجات",
+        "women_and_maternity": "قسم النساء والولادة",
+        "price": "السعر",
+        "from": "من ر.س",
+        "to": "إلى ر.س",
+        "clear_filters": "مسح الفلاتر"
+    },
+    "seleteoption": {
+        "sort_by": "ترتيب:",
+        "our_suggestions": "مقترحاتنا",
+        "best_selling": "الاكثر مبيعاً",
+        "top_rated": "الاعلى تقييماً",
+        "price_high_to_low": "السعر من الاعلى إلى الاقل",
+        "price_low_to_high": "السعر من الاقل إلى الاعلى",
+        "filter_and_sort": "التصفية والفلترة"
+    },
+    "doctor_not_found": "الطبيب غير موجود.",
+    "appointment_description_title": "وصف الموعد",
+    "appointment_description": "عند حجزك لموعد معنا تستطيع الحصول على مراجعة مجانية خلال أسبوع.",
+    "follow_up_title": "موعد المراجعة",
+    "follow_up_description": "تفاصيل عن موعد المراجعة.",
+    "important_notes_title": "ملاحظات هامة قبل الموعد",
+    "important_notes_description": "تذكيرات هامة قبل موعدك.",
+    "products_you_might_like": "منتجات قد تعجبك",
+    "AppointmentCard": {
+        "doctorImageAlt": "صورة الطبيب {index}",
+        "addToFavorites": "أضف للمفضلة",
+        "share": "مشاركة",
+        "currency": "ريال",
+        "description": "هذا النص هو مثال لوصف.",
+        "attachments": "المرفقات",
+        "addNote": "إضافة ملاحظة",
+        "attachFile": "إرفاق ملف",
+        "addNotePlaceholder": "أضف ملاحظاتك هنا",
+        "dropFileHere": "اسحب الملف وافلته هنا",
+        "browse": "استعراض",
+        "bookNow": "احجز الآن"
+    },
+    "Locations": {
+        "chooseBranch": "انت الآن تتصفح المتجر من",
+        "MainBranch": "الفرع الرئيسي",
+        "MeccaBranch": "فرع مكة",
+        "MadinahBranch": "فرع المدينة المنورة"
+    },
+    "loginpage": {
+        "login": "تسجيل الدخول",
+        "email": "البريد الإلكتروني",
+        "email_placeholder": "Your@email.com",
+        "incorrect_email": "* تأكد من صحة البريد الإلكتروني",
+        "verification_required": "رقم التحقق مطلوب لاكمال العملية",
+        "verification_sent": "لقد تم إرسال رمز التحقق فى رسالة إليكم",
+        "check_code": "تحقق",
+        "send_code_after": "يمكنك إعادة الإرسال بعد",
+        "send": "ارسال"
+    },
+    "shoppinPage":{
+        "cart": "سلة المشتريات",
+        "empty_cart": "السلة فارغة",
+        "return_home": "عودة للرئيسية"
     }
 }

@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import { FiSmartphone } from "react-icons/fi";
 import { useTranslations } from 'next-intl'; // Import useTranslations
+import { Link } from '@/navigation';
 
 const Footer: React.FC = () => {
     const t = useTranslations('Footer'); // 'Footer' is the namespace for translations
@@ -22,22 +22,22 @@ const Footer: React.FC = () => {
                         <h4 className="font-semibold text-base line-clamp-1">{t('importantLinks')}</h4>
                         <ul className="space-y-5 mt-5 text-sm text-black/70">
                             <li>
-                                <Link href="/" className="hover:text-black/50 duration-300">
+                                <Link href="/blog" className="hover:text-black/50 duration-300">
                                     {t('blog')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="hover:text-black/50 duration-300">
+                                <Link href="/WhoUs" className="hover:text-black/50 duration-300">
                                     {t('aboutUs')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="hover:text-black/50 duration-300">
+                                <Link href="/ConcatUs" className="hover:text-black/50 duration-300">
                                     {t('contactUs')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="hover:text-black/50 duration-300">
+                                <Link href="/BookNow" className="hover:text-black/50 duration-300">
                                     {t('bookNow')}
                                 </Link>
                             </li>

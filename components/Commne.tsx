@@ -1,14 +1,13 @@
 "use client";
-import React, { SetStateAction, useEffect, useState } from "react";
-import Image from "next/image";
+import React, { SetStateAction, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 import { useTranslations } from "next-intl";
-import { Button } from "./ui/button";
 import Links from "./Links";
 import Department from "./Department";
 import MegaMenu from "./MegaMenu";
 import AnimationDiv from "./AnimationDiv";
 import LangageLocation from "./LangageLocation";
+import { usePathname } from "next/navigation";
 
 export default function Commne({
     className,
@@ -22,6 +21,8 @@ export default function Commne({
     show?: boolean;
 }) {
     const t = useTranslations();
+    const pathname = usePathname();
+
     return (
         <div
             onClick={() => {
@@ -78,14 +79,14 @@ export default function Commne({
                     </div>
 
                     {/* Use translated text */}
-                    <Links link="/">{t("NavBar.home")}</Links>
-                    <Links link="/">{t("NavBar.offers")}</Links>
-                    <Links link="/">{t("NavBar.doctors")}</Links>
-                    <Department show={show} />
-                    <Links link="/">{t("NavBar.aboutUs")}</Links>
-                    <Links link="/">{t("NavBar.bookNow")}</Links>
-                    <Links link="/">{t("NavBar.contactUs")}</Links>
-                    <MegaMenu show={show} />
+                    <Links setActive={setActive} link="/">{t("NavBar.home")}</Links>
+                    <Links setActive={setActive} link={`/offers`}>{t("NavBar.offers")}</Links>
+                    <Links setActive={setActive} link="/Douctors">{t("NavBar.doctors")}</Links>
+                    <Department show={show} setactive={setActive} />
+                    <Links setActive={setActive} link="/WhoUs">{t("NavBar.aboutUs")}</Links>
+                    <Links setActive={setActive} link="/BookNow">{t("NavBar.bookNow")}</Links>
+                    <Links setActive={setActive} link="/ConcatUs">{t("NavBar.contactUs")}</Links>
+                    <MegaMenu show={show} setactive={setActive} />
                     <hr className="md:hidden" />
                     <LangageLocation setActive={setActive} className="md:hidden" />
                 </div>

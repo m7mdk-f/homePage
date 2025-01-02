@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <header className="bg-white pt-4 pb-3 md:block hidden">
-            <div className="container shadow-sm p-4 flex items-center gap-7">
+            <div className="container shadow-sm py-4 flex items-center gap-7">
                 <div className="flex items-center space-x-2 rtl:space-x-reverse">
                     <div className="md:text-right mb-6 md:mb-0 relative sm:w-64 w-full h-12">
                         <Image fill src='/Images/logo2.avif' className='object-contain' alt='' />

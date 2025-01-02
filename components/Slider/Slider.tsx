@@ -8,7 +8,7 @@ import { Autoplay } from 'swiper/modules';
 
 // swipervalue, 
 // iconClass ?: string, divClass: string, goback ?: boolean, children ?: ReactNode, classButton ?: string, hoverBut ?: string, iconnext ?: ReactElement, iconpre ?: ReactElement
-export default function Slider({ spaceBetween, slidesView, insideDiv, childrenposion = 'center', containerclass, headerDivBut, shownumer = false, number = 1, className, children, childrenBut, iconClass, divClass, goback = false, classButton, hoverBut, iconnext, iconpre, enableAutonPlay = false, delay, divcontainSlid = false }: { slidesView?: any, spaceBetween?: Number, containerclass?: string, insideDiv?: string, childrenposion?: string, headerDivBut?: string, shownumer?: boolean, enableAutonPlay?: boolean, children: ReactNode[], className?: string, number?: Number, childrenBut?: ReactNode, iconClass?: string, divClass?: string, goback?: boolean, classButton?: string, hoverBut?: string, iconnext?: ReactElement, iconpre?: ReactElement, delay?: number, divcontainSlid?: boolean }) {
+export default function Slider({ secend = false, spaceBetween, slidesView, insideDiv, childrenposion = 'center', containerclass, headerDivBut, shownumer = false, number = 1, className, children, childrenBut, iconClass, divClass, goback = false, classButton, hoverBut, iconnext, iconpre, enableAutonPlay = false, delay, divcontainSlid = false }: { secend?: boolean, slidesView?: any, spaceBetween?: Number, containerclass?: string, insideDiv?: string, childrenposion?: string, headerDivBut?: string, shownumer?: boolean, enableAutonPlay?: boolean, children: ReactNode[], className?: string, number?: Number, childrenBut?: ReactNode, iconClass?: string, divClass?: string, goback?: boolean, classButton?: string, hoverBut?: string, iconnext?: ReactElement, iconpre?: ReactElement, delay?: number, divcontainSlid?: boolean }) {
     const [swiper, setSwiper] = useState<SwiperType | null>()
     const [numberdiv, setnumber] = useState(1)
     const [end, setEndValue] = useState(0)
@@ -36,7 +36,7 @@ export default function Slider({ spaceBetween, slidesView, insideDiv, childrenpo
     }
     return (
 
-        <div className={`${childrenposion == 'top' ? 'flex flex-col-reverse' : ''} ${containerclass || ""}    w-full relative`}>
+        <div className={`${childrenposion == 'top' ? 'flex flex-col-reverse' : ''} ${containerclass || "w-full relative"}    `}>
             <Swiper
                 autoplay={enableAutonPlay ? { delay: delay || 3000 } : false}
                 effect="cube" // Transition effect: "fade", "slide", "cube", etc.
@@ -52,7 +52,7 @@ export default function Slider({ spaceBetween, slidesView, insideDiv, childrenpo
                     setSwiper(swiper)
                     setEndValue(swiper.slides.length)
                 }}
-                className={`${className || 'w-full'}  relative `}
+                className={`${className || 'w-full relative'}   `}
             >
                 {children.map((card, i) => {
                     return (
@@ -64,7 +64,7 @@ export default function Slider({ spaceBetween, slidesView, insideDiv, childrenpo
 
             </Swiper>
 
-            <Buttonslider insideDiv={insideDiv} childrenposion={childrenposion} headerDivBut={headerDivBut} divcontainSlid={divcontainSlid} goback={goback} classButton={classButton} hoverBut={hoverBut} iconpre={iconpre} iconnext={iconnext} iconClass={iconClass} swipervalue={swiper || null} divClass={divClass} >
+            <Buttonslider insideDiv={insideDiv} childrenposion={childrenposion} headerDivBut={headerDivBut} divcontainSlid={divcontainSlid} goback={goback} secend={secend} classButton={classButton} hoverBut={hoverBut} iconpre={iconpre} iconnext={iconnext} iconClass={iconClass} swipervalue={swiper || null} divClass={divClass} >
                 {childrenBut}
                 {shownumer ? <div className={`${iconClass} flex justify-center items-center`}>{numberdiv}/{end}</div> : ""}
             </Buttonslider>

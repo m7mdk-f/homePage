@@ -3,9 +3,9 @@ import Button from './Button';
 import SwiperType from "swiper";
 import { MdOutlineNavigateNext } from "react-icons/md";
 
-import { GrFormPrevious } from 'react-icons/gr';
+import { GrFormNextLink, GrFormPrevious, GrFormPreviousLink } from 'react-icons/gr';
 
-function Buttonslider({ insideDiv, headerDivBut, childrenposion = "center", swipervalue, iconClass, divClass, goback = false, children, classButton, hoverBut, iconnext, iconpre, divcontainSlid }: { insideDiv?: string, headerDivBut?: string, childrenposion?: string, swipervalue: SwiperType | null, iconClass?: string, divClass?: string, goback?: boolean, children?: ReactNode, classButton?: string, hoverBut?: string, iconnext?: ReactElement, iconpre?: ReactElement, divcontainSlid?: boolean }) {
+function Buttonslider({ insideDiv, headerDivBut, secend = false, childrenposion = "center", swipervalue, iconClass, divClass, goback = false, children, classButton, hoverBut, iconnext, iconpre, divcontainSlid }: { secend?: boolean, insideDiv?: string, headerDivBut?: string, childrenposion?: string, swipervalue: SwiperType | null, iconClass?: string, divClass?: string, goback?: boolean, children?: ReactNode, classButton?: string, hoverBut?: string, iconnext?: ReactElement, iconpre?: ReactElement, divcontainSlid?: boolean }) {
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
     useEffect(() => {
@@ -23,7 +23,7 @@ function Buttonslider({ insideDiv, headerDivBut, childrenposion = "center", swip
         <div className={`${headerDivBut || 'justify-between'} flex`}>
             {childrenposion?.trim().toLocaleLowerCase() === 'top' ? children : ""}
             <div className={`${divClass || ' items-center flex  justify-between p-3 '} ${divcontainSlid && 'w-full h-full  absolute top-0 left-0 z-10 pointer-events-none'}`}>
-                <div className={`${insideDiv || 'flex gap-3'} `}>
+                <div className={`${insideDiv || 'flex gap-3'}  ${divcontainSlid && 'flex justify-between w-full'}`}>
                     <Button
                         onClike={() => {
                             swipervalue?.isBeginning && goback ? swipervalue.slideTo(swipervalue.slides.length - 1) : swipervalue?.slidePrev()
@@ -31,8 +31,17 @@ function Buttonslider({ insideDiv, headerDivBut, childrenposion = "center", swip
                         className={`${classButton || "rounded-md w-8 h-8 bg-gray-300 "} text-center flex  justify-center items-center ${isBeginning && !goback ? 'opacity-50  cursor-not-allowed hover:opacity-50' : `${hoverBut || 'hover:text-primary  pointer-events-auto cursor-pointer '} `}`}
                     >
                         {iconpre && React.cloneElement(iconpre, { className: ` ${iconClass || 'w-5 h-5'}` }) || <>
-                            <MdOutlineNavigateNext className={` ${iconClass || 'w-5 h-5'} ltr:hidden`} />
-                            <GrFormPrevious className={` ${iconClass || 'w-5 h-5'} rtl:hidden`} />
+                            {secend ?
+                                <>
+                                    <GrFormNextLink className={`${iconClass || 'w-5 h-5'} ltr:hidden w-7`} />
+                                    <GrFormPreviousLink className={`${iconClass || 'w-5 h-5'} rtl:hidden w-7`} />
+                                </>
+                                :
+                                <>
+                                    <GrFormPrevious className={` ${iconClass || 'w-5 h-5'} rtl:hidden`} />
+                                    <MdOutlineNavigateNext className={` ${iconClass || 'w-5 h-5'} ltr:hidden`} />
+                                </>
+                            }
                         </>}
                     </Button>
                     {childrenposion?.trim().toLocaleLowerCase() === 'center' ? children : ""}
@@ -43,8 +52,18 @@ function Buttonslider({ insideDiv, headerDivBut, childrenposion = "center", swip
                         className={`${classButton || "rounded - md w-8 h-8 bg-gray-300 "} text-center flex   justify-center items-center ${isEnd && !goback ? 'opacity-50  cursor-not-allowed hover:opacity-50' : `${hoverBut || 'hover:text-primary  pointer-events-auto cursor-pointer'} `}`}
                     >
                         {iconnext && React.cloneElement(iconnext, { className: ` ${iconClass || 'w-5 h-5'}` }) || <>
-                            <GrFormPrevious className={` ${iconClass || 'w-5 h-5'} ltr:hidden`} />
-                            <MdOutlineNavigateNext className={` ${iconClass || 'w-5 h-5'} rtl::hidden`} />
+                            {secend ?
+                                <>
+                                    <GrFormNextLink className={`${iconClass || 'w-5 h-5'} rtl:hidden w-7`} />
+                                    <GrFormPreviousLink className={`${iconClass || 'w-5 h-5'} ltr:hidden w-7`} />
+                                </>
+                                :
+                                <>
+                                    <GrFormPrevious className={` ${iconClass || 'w-5 h-5'} ltr:hidden`} />
+                                    <MdOutlineNavigateNext className={` ${iconClass || 'w-5 h-5'} rtl:hidden`} />
+                                </>
+                            }
+
 
                         </>}
                     </Button>

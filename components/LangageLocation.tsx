@@ -1,16 +1,23 @@
 "use client";
 import { useAppContext } from '@/app/Context/AppContext';
 import Image from 'next/image';
-import React, { SetStateAction } from 'react';
+import React, { SetStateAction, useEffect, useState } from 'react';
 import { CiLocationOn } from 'react-icons/ci';
 import { useTranslations } from 'next-intl';
 
 function LangageLocation({ className, setActive }: { setActive?: React.Dispatch<SetStateAction<boolean>>, className?: string }) {
-    const { toggleDarkMode } = useAppContext();
+    const { toggleDarkMode, toggleLocation, selectedBranch } = useAppContext();
+
+    console.log(selectedBranch)
     const t = useTranslations();
+    const [text, setText] = useState("")
+    useEffect(() => {
+        if (window !== undefined) {
+            setText(t(`Locations.${selectedBranch}`))
+        }
+    }, [selectedBranch])    
     return (
         <div className={`${className} flex items-center space-x-4 rtl:space-x-reverse`}>
-            {/* Language Selector */}
             <div onClick={(() => {
                 toggleDarkMode()
                 setActive && setActive(false)
@@ -21,10 +28,13 @@ function LangageLocation({ className, setActive }: { setActive?: React.Dispatch<
                 <span className="text-xs font-semibold">{t('languageArabic')}</span>
             </div>
 
-            <div className="flex gap-2 text-sm">
+            <div onClick={() => {
+                toggleLocation()
+                setActive && setActive(false)
+            }} className="flex gap-2 cursor-pointer text-sm">
                 <span>ر.س</span>
                 <CiLocationOn className="text-base mt-0.5" />
-                <span className='line-clamp-1'>{t('mainBranch')}</span>
+                <span className='line-clamp-1'>{text}</span>
             </div>
         </div>
     );

@@ -10,7 +10,18 @@ function ShowVideo() {
     const t = useTranslations("showViedo")
     return (
         <div>
-            <PodcastCard video={video} setVideo={setVideo} />
+            <PodcastCard video={video} setVideo={setVideo} >
+                <div className="h-[90%] lg:w-[75%] md:w-[85%] w-[90%] mx-auto" onClick={(e) => e.stopPropagation()} >
+                    <iframe
+                        className="w-full h-full"
+                        src="https://www.youtube.com/embed/ac4ivVsFlzk"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
+                </div>
+            </PodcastCard>
             <div className="container py-20 bg-primary bg-opacity-[.05] " >
                 <div className="lg:w-[90%] w-[90%] mx-auto lg:flex-row  flex-col-reverse flex gap-20">
                     <div className="w-full  flex  items-center">

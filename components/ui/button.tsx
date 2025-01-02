@@ -16,7 +16,7 @@ const buttonVariants = cva(
           "border border-primary rounded-xl text-primary  hover:bg-primary hover:text-white ",
         secondary: "rounded-full  text-gray-400 hover:text-primary shadow-xl hover:shadow-none",
         ghost: "bg-white text-sm border-none font-semibold hover:bg-gray-100 flex items-center justify-center rounded-xl text-black border-white border-2 ",
-        link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
+        link: "border text-gray-300 hover:text-white hover:bg-gray-300 duration-300 border-gray-300 ",
       },
       size: {
         default: " px-5 py-2.5",

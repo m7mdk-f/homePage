@@ -1,11 +1,10 @@
 import React from 'react'
-import { Button } from './ui/button'
-import { GrFormPrevious } from 'react-icons/gr'
 import HeaderDiv from './HeaderDiv'
 import ButtonHover from './ButtonHover'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/navigation'
 
-function ShowAll({ text }: { text: string }) {
+function ShowAll({ text, link }: { link?: string, text: string }) {
     const t = useTranslations("home")
     return (
         <div className="flex sm:flex-nowrap flex-wrap text-center   justify-between ">
@@ -13,7 +12,10 @@ function ShowAll({ text }: { text: string }) {
                 <HeaderDiv text={text} />
             </div>
             <div className="sm:block hidden">
-                <ButtonHover text={t("viewAll")} style="outline" />
+                <Link href={`${link || '/Douctors'}`}>
+
+                    <ButtonHover text={t("viewAll")} style="outline" />
+                </Link>
             </div>
         </div>
     )

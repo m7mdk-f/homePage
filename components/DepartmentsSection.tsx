@@ -18,7 +18,7 @@ const DepartmentsSection = () => {
                             backgroundSize: "cover",
                         }}
                     >
-                        <DivHover text={t("dermatology")} />
+                        <DivHover link="dermatology" text={t("dermatology")} />
                     </div>
 
                     <div
@@ -28,7 +28,7 @@ const DepartmentsSection = () => {
                             backgroundSize: "cover",
                         }}
                     >
-                        <DivHover text={t("ophthalmology")} />
+                        <DivHover link="Eyes" text={t("ophthalmology")} />
                     </div>
 
                     <div
@@ -38,7 +38,7 @@ const DepartmentsSection = () => {
                             backgroundSize: "cover",
                         }}
                     >
-                        <DivHover text={t("internalMedicine")} />
+                        <DivHover link="internalMedicine" text={t("internalMedicine")} />
                     </div>
 
                     <div
@@ -48,7 +48,7 @@ const DepartmentsSection = () => {
                             backgroundSize: "cover",
                         }}
                     >
-                        <DivHover text={t("psychiatry")} />
+                        <DivHover link="psychiatry" text={t("psychiatry")} />
                     </div>
                 </div>
             </div>

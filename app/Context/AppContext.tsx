@@ -1,30 +1,51 @@
 "use client"
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
 
 // Define the Context type
 interface AppContextType {
     ShowSection: boolean;
     toggleDarkMode: () => void;
-    currentLanguage: string;
-    changeLanguage: (lang: string) => void;
+    ShowLocation: boolean,
+    toggleLocation: () => void,
+    setBranch: (branch: string) => void,
+    selectedBranch: string,
+    users: boolean,
+    toggleUser: () => void
 }
 
-// Create the Context
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-// Define the Provider component
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+    const [selectedBranch, setSelectedBranch] = useState<string>(() => {
+        if (typeof window !== "undefined") {
+            return localStorage.getItem("selectedBranch") || "MainBranch";
+        }
+        return "MainBranch";
+    });
+
+    useEffect(() => {
+        localStorage.setItem("selectedBranch", selectedBranch);
+    }, [selectedBranch]);
+
+
+    const setBranch = (branch: string) => {
+        setSelectedBranch(branch);
+    };
+
     const [ShowSection, setShowSection] = useState<boolean>(false);
-    const [currentLanguage, setCurrentLanguage] = useState<string>('ar'); // Default language is Arabic
+
+    const [ShowLocation, setShowLocation] = useState<boolean>(false);
+    const [users, setUser] = useState<boolean>(false)
+    const toggleUser = () => setUser(!users)
 
     const toggleDarkMode = () => setShowSection((prev) => !prev);
 
-    const changeLanguage = (lang: string) => {
-        setCurrentLanguage(lang);
-    };
+    const toggleLocation = () => setShowLocation((prev) => !prev);
+
+
 
     return (
-        <AppContext.Provider value={{ ShowSection, toggleDarkMode, currentLanguage, changeLanguage }}>
+        <AppContext.Provider value={{ users, toggleUser, selectedBranch, setBranch, ShowLocation, toggleLocation, ShowSection, toggleDarkMode }}>
             {children}
         </AppContext.Provider>
     );

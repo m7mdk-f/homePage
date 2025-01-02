@@ -1,10 +1,10 @@
 "use client"
-import React, { SetStateAction } from 'react';
+import React, { ReactNode, SetStateAction } from 'react';
 import { IoClose } from "react-icons/io5";
 import AnimationDiv from './AnimationDiv';
 import { AnimatePresence } from 'framer-motion';
 
-const PodcastCard = ({ video, setVideo }: { video: boolean, setVideo: React.Dispatch<SetStateAction<boolean>> }) => {
+const PodcastCard = ({ video, setVideo, children }: { children: ReactNode, video: boolean, setVideo: React.Dispatch<SetStateAction<boolean>> }) => {
     return (
         <>
             <AnimatePresence mode='wait'>
@@ -13,16 +13,8 @@ const PodcastCard = ({ video, setVideo }: { video: boolean, setVideo: React.Disp
                         <div onClick={() => setVideo(false)} className='fixed cursor-pointer top-0 right-0 text-white bg-gray-900 p-2 text-2xl '>
                             <IoClose />
                         </div>
-                        <div className="h-[90%] lg:w-[75%] md:w-[85%] w-[90%] mx-auto" onClick={(e) => e.stopPropagation()} >
-                            <iframe
-                                className="w-full h-full"
-                                src="https://www.youtube.com/embed/ac4ivVsFlzk"
-                                title="YouTube video player"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
-                        </div>
+                        {children}
+                     
                     </AnimationDiv>}
             </AnimatePresence>
         </>

@@ -8,7 +8,7 @@ interface InputRadiosProps {
 
 function InputRadios({ title, checked = false, onChange }: InputRadiosProps) {
     return (
-        <div className="flex gap-2 items-center mb-3">
+        <div className="flex gap-2 items-center mb-1.5">
             <input
                 type="radio"
                 name="branch"
