@@ -36,7 +36,7 @@ const AppointmentCard = ({ doctor }: { doctor: Doctor }) => {
     return (
         <div className="flex flex-col md:flex-row items-start gap-5 lg:mt-10">
             <PodcastCard setVideo={setActive} video={active}>
-                <div onClick={(e) => e.stopPropagation()} className=" max-w-lg w-full h-4/5">
+                <div onClick={(e) => e.stopPropagation()} className=" max-w-lg max-h-[500px]  bg-primary/5  h-full w-full ">
                     {doctor.image.length > 1 ? (
                         <Slider
                             secend
@@ -48,8 +48,13 @@ const AppointmentCard = ({ doctor }: { doctor: Doctor }) => {
                             divcontainSlid
                         >
                             {imageList.map((item, index) => (
-                                <div key={index} className="w-full relative h-full">
-                                    <Image fill alt={`Doctor image ${index}`} className="object-contain" src={item} />
+                                <div className=" w-full h-full relative">
+                                    <Image
+                                        src={item}
+                                        alt={`Image ${index}`}
+                                        layout="fill"
+                                        objectFit="contain"
+                                    />
                                 </div>
                             ))}
                         </Slider>

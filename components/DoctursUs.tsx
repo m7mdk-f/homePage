@@ -3,13 +3,13 @@ import Image from 'next/image'
 import React from 'react'
 import { FaRegCalendar } from 'react-icons/fa'
 import { Button } from './ui/button'
-import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/navigation'
 
 function DoctursUs({ doctors, titleStyle, className }: { doctors: Doctor, titleStyle?: string, className?: string }) {
   const t = useTranslations()
   return (
-    <Link href="/">
+    <Link href={`/doctersDetails/${doctors.id}`}>
       <div className='relative group lg:h-[435px] h-96  rounded-xl overflow-hidden'>
         <Image fill src={doctors.image[0]} className='object-cover ' alt='c' />
         <div className='w-full h-full absolute top-0 left-0  bgradus duration-500 md:translate-y-16 translate-y-0 group-hover:translate-y-0 opacity-80  md:opacity-0 group-hover:opacity-80'></div>
