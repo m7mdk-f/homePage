@@ -5,6 +5,8 @@ import 'swiper/css';
 import SwiperType from 'swiper';
 import Buttonslider from './Buttonslider';
 import { Autoplay } from 'swiper/modules';
+import { useTranslations } from 'next-intl';
+
 
 // swipervalue, 
 // iconClass ?: string, divClass: string, goback ?: boolean, children ?: ReactNode, classButton ?: string, hoverBut ?: string, iconnext ?: ReactElement, iconpre ?: ReactElement
@@ -12,6 +14,7 @@ export default function Slider({ secend = false, spaceBetween, slidesView, insid
     const [swiper, setSwiper] = useState<SwiperType | null>()
     const [numberdiv, setnumber] = useState(1)
     const [end, setEndValue] = useState(0)
+    const t = useTranslations();
     useEffect(() => {
 
         swiper?.on("slideChange", () => {
@@ -39,8 +42,9 @@ export default function Slider({ secend = false, spaceBetween, slidesView, insid
         <div className={`${childrenposion == 'top' ? 'flex flex-col-reverse' : ''} ${containerclass || "w-full relative"}    `}>
             <Swiper
                 autoplay={enableAutonPlay ? { delay: delay || 3000 } : false}
-                effect="cube" // Transition effect: "fade", "slide", "cube", etc.
+                effect="cube"
                 speed={700}
+                dir={t('locale') !== "ar" ? "ltr" : "rtl"}
                 spaceBetween={spaceBetween?.valueOf() || 50}
                 modules={enableAutonPlay ? [Autoplay] : []}
                 slidesPerView={number.valueOf()}
