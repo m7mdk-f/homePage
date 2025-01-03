@@ -24,7 +24,6 @@ const FilterSection: React.FC = () => {
                 </ShowDiv>
             </div>
 
-            {/* Price Section */}
             <ShowDiv title={t('price')}>
                 <div className="flex gap-3 items-center">
                     <input

@@ -10,8 +10,7 @@ const FilterBar = ({ setactive }: { setactive: React.Dispatch<SetStateAction<boo
     const t = useTranslations('seleteoption');
 
     return (
-        <div className="flex items-center gap-3 flex-wrap">
-            {/* Sort Dropdown */}
+        <div className="flex items-center gap-3 justify-center flex-wrap">
             <div className="flex gap-2 items-center text-sm">
                 <label
                     htmlFor="product-filter"
@@ -33,7 +32,6 @@ const FilterBar = ({ setactive }: { setactive: React.Dispatch<SetStateAction<boo
                 </select>
             </div>
 
-            {/* Filter Button */}
             <Button variant="outline" onClick={() => setactive(true)}>
                 <TbFilter className="w-10 h-10" />
                 <span>{t('filter_and_sort')}</span>
