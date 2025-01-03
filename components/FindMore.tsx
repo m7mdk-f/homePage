@@ -2,11 +2,11 @@ import { GrFormPrevious } from 'react-icons/gr';
 import { Button } from './ui/button';
 import Image from 'next/image';
 import React from 'react';
-import { useTranslations } from 'next-intl';  // Hook for translations
+import { useTranslations } from 'next-intl';
 import ButtonHover from './ButtonHover';
 
 const FindMore: React.FC = () => {
-    const t = useTranslations('findMore');  // Fetch localized text for the 'findMore' section
+    const t = useTranslations('findMore');
     return (
         <section
             style={{ backgroundImage: "url('/Images/background2.png')" }}
@@ -19,11 +19,11 @@ const FindMore: React.FC = () => {
                         {t('description')}
                     </p>
                     <ButtonHover style='ghost' styleHover="r" text={t('buttonText')} />
-             
+
                 </div>
 
                 <div className="md:w-1/2 h-52 w-full relative">
-                    <Image fill alt="" src='/images/FindMoreSection.webp' className="object-cover rounded-tr-2xl rounded-bl-2xl z-10" />
+                    <Image fill alt="" src='/Images/FindMoreSection.webp' className="object-cover rounded-tr-2xl rounded-bl-2xl z-10" />
                 </div>
             </div>
         </section>
