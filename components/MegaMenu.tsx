@@ -1,4 +1,4 @@
-import React, { SetStateAction, useState } from "react";
+import React, { SetStateAction, useEffect, useState } from "react";
 import { FaAngleDown, FaRegCalendar } from "react-icons/fa";
 import { Button } from "./ui/button";
 import Image from "next/image";
@@ -11,8 +11,10 @@ function MegaMenu({ show = false, setactive }: { show?: boolean, setactive?: Rea
     const [active, setActive] = useState(show);
     const t = useTranslations();
     const locale = t("locale");
+
+
     return (
-        <div className="group z-10">
+        <div className="group  z-10">
             <div className="flex justify-between md:block relative">
                 <Links link="/offers" className="group-hover:opacity-80 md:flex hidden md:gap-1 justify-between">
                     {t("MegaMenu.sections")}
@@ -39,7 +41,7 @@ function MegaMenu({ show = false, setactive }: { show?: boolean, setactive?: Rea
                     {t("MegaMenu.megaMenuLink")}
                 </Link>
             </div>
-            <div className="md:fixed top-40  relative pointer-events-none group-hover:opacity-100 md:opacity-0 group-hover:translate-y-0 md:translate-y-10 duration-300 group-hover:pointer-events-auto md:pt-0 w-full left-0">
+            <div className={`hidden md:block md:absolute max-w-[1300px] w-screen  ltr:-left-[5%] rtl:-right-[5%] relative pointer-events-none group-hover:opacity-100 md:opacity-0 group-hover:translate-y-0 md:translate-y-10 duration-300 group-hover:pointer-events-auto md:pt-0  `}>
                 <div
                     className={` overflow-hidden duration-500 bg-white md:flex gap-2 py-1 rounded-md container`}
                 >
@@ -48,7 +50,7 @@ function MegaMenu({ show = false, setactive }: { show?: boolean, setactive?: Rea
                             {t("MegaMenu.megaMenuLink")}
                         </Link>
                     </div>
-                    <div className="md:grid hidden  w-full md:grid-cols-4 gap-4 p-4">
+                    <div className="md:grid  w-full grid-cols-4 gap-4 p-4">
                         {(locale == "ar" || locale == "en") && doctors[locale].slice(0, 4).map((item, index: number) => (
                             <div key={index} className="md:border rounded-lg overflow-hidden">
                                 <Link href={`/doctersDetails/${item.id}`}>

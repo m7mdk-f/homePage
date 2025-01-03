@@ -30,7 +30,7 @@ function NavBar() {
   return (
     <>
       <Header />
-      <nav className={`${scrollY >= 175 ? scrollY >= 220 ? " md:fixed  md:overflow-hidden md:opacity-100" : " md:opacity-0" : " relative"} duration-500 bg-primary z-50 top-0 left-0  w-full  py-5`}>
+      <nav className={`${scrollY >= 175 ? scrollY >= 220 ? " md:fixed  md:opacity-100" : " md:opacity-0" : " relative"} duration-500 bg-primary z-50 top-0 left-0  w-full  py-5`}>
         <div className='container  flex  justify-between'>
           <div className='text-white md:hidden text-2xl flex sm:gap-3 '>
             <IoMenuSharp className='cursor-pointer sm:w-9 sm:h-9 ' onClick={() => { setActive(true) }} />

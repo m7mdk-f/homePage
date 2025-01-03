@@ -47,7 +47,7 @@ export default function Department({ show = false, setactive }: { show?: boolean
     ];
 
     return (
-        <div className="group relative z-10">
+        <div className="group relative z-[100]">
             <div className="flex justify-between md:block relative">
                 <div
                     className="group-hover:opacity-80 md:hidden  flex md:gap-1 justify-between"
